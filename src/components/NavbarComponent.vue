@@ -22,11 +22,15 @@
 export default {
     name: 'NavbarComponent',
     mounted() {
+    this.scrollToMain();
     this.scrollToFooter();
     this.scrollToPortofolio();
-    this.scrollToMain();
   },
   methods: {
+    scrollToMain() {
+      const main = document.getElementById('main');
+      main.scrollIntoView({ behavior: 'smooth' });
+    },
     scrollToFooter() {
       const footer = document.getElementById('footer');
       footer.scrollIntoView({ behavior: 'smooth' });
@@ -34,10 +38,6 @@ export default {
     scrollToPortofolio() {
       const portofolio = document.getElementById('portofolio');
       portofolio.scrollIntoView({ behavior: 'smooth' });
-    },
-    scrollToMain() {
-      const main = document.getElementById('main');
-      main.scrollIntoView({ behavior: 'smooth' });
     },
   },
 }
